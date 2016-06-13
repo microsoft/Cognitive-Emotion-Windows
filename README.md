@@ -1,4 +1,4 @@
-The client library
+Microsoft Cognitive Services Emotion Windows client library
 ==================
 
 The Emotion API client library is a thin C\# client wrapper for Microsoft Cognitive Services (formerly Project Oxford) Emotion
@@ -29,17 +29,19 @@ Build the sample
 
 1.  Starting in the folder where you clone the repository (this folder)
 
-2.  Pull in the shared Windows code by calling `git submodule init`
+2.  In a git command line tool, type `git submodule init` (or do this through a UI)
 
-3.  Start Microsoft Visual Studio 2015 and select `File > Open >
+3.  Pull in the shared Windows code by calling `git submodule update`
+
+4.  Start Microsoft Visual Studio 2015 and select `File > Open >
     Project/Solution`.
 
-4.  Go to `Sample-WPF Folder`.
+5.  Go to `Sample-WPF Folder`.
 
-5.  Double-click the Visual Studio 2015 Solution (.sln) file
+6.  Double-click the Visual Studio 2015 Solution (.sln) file
     EmotionAPI-WPF-Samples.
 
-6.  Press Ctrl+Shift+B, or select `Build > Build Solution`.
+7.  Press Ctrl+Shift+B, or select `Build > Build Solution`.
 
 Run the sample
 --------------

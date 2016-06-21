@@ -1,54 +1,38 @@
-Microsoft Cognitive Services Emotion Windows client library
-==================
+# Microsoft Emotion API: Windows Client Library
+This repo contains the Windows client library & sample for the Microsoft Emotion API, part of [Cognitive Services](https://www.microsoft.com/cognitive-services).
+* [Learn about the Emotion API](https://www.microsoft.com/cognitive-services/en-us/emotion-api)
+* [Read the documentation](https://www.microsoft.com/cognitive-services/en-us/emotion-api/documentation)
+* [Find more SDKs & Samples]()
 
-The Emotion API client library is a thin C\# client wrapper for Microsoft Cognitive Services (formerly Project Oxford) Emotion
-REST APIs.  
 
-The easiest way to use this client library is to get microsoft.projectoxford.emotion package from [nuget](<http://nuget.org>).
+## The Client Library
+This client library is a thin C\# client wrapper for the Microsoft Emotion API.
 
-Please go to [Emotion API Package in nuget](https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/) for more details.
+The easiest way to use this client library is to get microsoft.projectoxford.emotion package from [nuget](<http://nuget.org>). Please go to [Emotion API Package in nuget](https://www.nuget.org/packages/Microsoft.ProjectOxford.Emotion/) for more details.
 
-Order expressions
-============
-
+### Order expressions
 You can call the function ToRankedList from the Scores class, for example:
 
 ```
 IEnumerable<KeyValuePair<string, float>> collection = myScores.ToRankedList();
 ```
 
-The sample
-==========
+## The Sample
+This sample is a Windows WPF application to demonstrate the use of Microsoft Cognitive Services Emotion API. It demonstrates emotion API by specifying a URL or using a stream.
 
-This sample is a Windows WPF application to demonstrate the use of Microsoft Cognitive Services Emotion API.
+### Build the sample
+ 1. Starting in the folder where you clone the repository (this folder)
+ 2. In a git command line tool, type `git submodule init` (or do this through a UI)
+ 3. Pull in the shared Windows code by calling `git submodule update`
+ 4. Start Microsoft Visual Studio 2015 and select `File > Open > Project/Solution`.
+ 5. Go to `Sample-WPF Folder`.
+ 6. Double-click the Visual Studio 2015 Solution (.sln) file EmotionAPI-WPF-Samples.
+ 7. Press Ctrl+Shift+B, or select `Build > Build Solution`.
 
-It demonstrates emotion API by specifying a URL or using a stream.
-
-Build the sample
-----------------
-
-1.  Starting in the folder where you clone the repository (this folder)
-
-2.  In a git command line tool, type `git submodule init` (or do this through a UI)
-
-3.  Pull in the shared Windows code by calling `git submodule update`
-
-4.  Start Microsoft Visual Studio 2015 and select `File > Open >
-    Project/Solution`.
-
-5.  Go to `Sample-WPF Folder`.
-
-6.  Double-click the Visual Studio 2015 Solution (.sln) file
-    EmotionAPI-WPF-Samples.
-
-7.  Press Ctrl+Shift+B, or select `Build > Build Solution`.
-
-Run the sample
---------------
-
+### Run the sample
 After the build is complete, press F5 to run the sample.
 
-First, you must obtain a Emotion API subscription key by following instructions in [Microsoft Cognitive Services subscription](<https://www.microsoft.com/cognitive-services/en-us/sign-up>).
+First, you must obtain a Emotion API subscription key by [following the instructions on our website](<https://www.microsoft.com/cognitive-services/en-us/sign-up>).
 
 Locate the text edit box saying "Paste your subscription key here to start" on
 the top right corner. Paste your subscription key. You can choose to persist
@@ -65,19 +49,16 @@ from everyone in it.
 
 <img src="SampleScreenshots/SampleRunning.png" width="80%"/>
 
-Contributing
-============
-We welcome contributions and are always looking for new SDKs, input, and
-suggestions. Feel free to file issues on the repo and we'll address them as we can. You can also learn more about how you can help on the [Contribution
-Rules & Guidelines](</CONTRIBUTING.md>).
+## Contributing
+We welcome contributions. Feel free to file issues and pull requests on the repo and we'll address them as we can. Learn more about how you can help on our [Contribution Rules & Guidelines](</CONTRIBUTING.md>). 
 
-For questions, feedback, or suggestions about Microsoft Cognitive Services, feel free to reach out to us directly.
+You can reach out to us anytime with questions and suggestions using our communities below:
+ - **Support questions:** [StackOverflow](<https://stackoverflow.com/questions/tagged/microsoft-cognitive>)
+ - **Feedback & feature requests:** [Cognitive Services UserVoice Forum](<https://cognitive.uservoice.com>)
 
--   [Cognitive Services UserVoice Forum](<https://cognitive.uservoice.com>)
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-License
-=======
-
+## License
 All Microsoft Cognitive Services SDKs and samples are licensed with the MIT License. For more details, see
 [LICENSE](</LICENSE.md>).
 

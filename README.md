@@ -1,5 +1,5 @@
 # Microsoft Emotion API: Windows Client Library & Sample
-This repo contains the Windows client library & sample for the Microsoft Emotion API, part of [Cognitive Services](https://www.microsoft.com/cognitive-services).
+This repo contains the Windows client library & sample for the Microsoft Emotion API, an offering within [Microsoft Cognitive Services](https://www.microsoft.com/cognitive-services), formerly known as Project Oxford.
 * [Learn about the Emotion API](https://www.microsoft.com/cognitive-services/en-us/emotion-api)
 * [Read the documentation](https://www.microsoft.com/cognitive-services/en-us/emotion-api/documentation)
 * [Find more SDKs & Samples]()
@@ -63,3 +63,6 @@ All Microsoft Cognitive Services SDKs and samples are licensed with the MIT Lice
 [LICENSE](</LICENSE.md>).
 
 Sample images are licensed separately, please refer to [LICENSE-IMAGE](</LICENSE-IMAGE.md>).
+
+## Developer Code of Conduct
+Developers using Cognitive Services, including this client library & sample, are expected to follow the “Developer Code of Conduct for Microsoft Cognitive Services”, found at [http://go.microsoft.com/fwlink/?LinkId=698895](http://go.microsoft.com/fwlink/?LinkId=698895).

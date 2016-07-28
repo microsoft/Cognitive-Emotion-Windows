@@ -145,7 +145,7 @@ namespace Microsoft.ProjectOxford.Emotion
         /// <returns>Video operation created</returns>
         public async Task<VideoEmotionRecognitionOperation> RecognizeInVideoAsync(string videoUrl)
         {
-            var operation = await PostAsync<string, VideoEmotionRecognitionOperation>(@"/recognizeInVideo", videoUrl);
+            var operation = await PostAsync<UrlReqeust, VideoEmotionRecognitionOperation>(@"/recognizeInVideo", new UrlReqeust { url = videoUrl });
             return operation;
         }
 

@@ -47,12 +47,24 @@ namespace Microsoft.ProjectOxford.Emotion
     public class EmotionServiceClient : ServiceClient, IEmotionServiceClient
     {
         /// <summary>
+        /// Default service endpoint URL root.
+        /// </summary>
+        public const string DEFAULT_API_ROOT = "https://api.projectoxford.ai/emotion/v1.0";
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="EmotionServiceClient"/> class.
         /// </summary>
         /// <param name="subscriptionKey">The subscription key.</param>
-        public EmotionServiceClient(string subscriptionKey) : base()
+        public EmotionServiceClient(string subscriptionKey) : this(subscriptionKey, DEFAULT_API_ROOT) {}
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EmotionServiceClient"/> class.
+        /// </summary>
+        /// <param name="subscriptionKey">The subscription key.</param>
+        /// <param name="apiRoot">Root URL of the service endpoint.</param>
+        public EmotionServiceClient(string subscriptionKey, string apiRoot) : base()
         {
-            ApiRoot = "https://api.projectoxford.ai/emotion/v1.0";
+            ApiRoot = apiRoot?.TrimEnd('/');
             AuthKey = "Ocp-Apim-Subscription-Key";
             AuthValue = subscriptionKey;
         }

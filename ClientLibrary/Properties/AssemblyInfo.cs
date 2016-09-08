@@ -38,7 +38,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Microsoft.ProjectOxford.Emotion")]
-[assembly: AssemblyDescription("Microsoft Project Oxford Emotion Recognition Client Library")]
+[assembly: AssemblyDescription("Microsoft Cognitive Services Emotion Recognition Client Library")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft Corporation")]
 [assembly: AssemblyProduct("Microsoft ProjectOxford")]

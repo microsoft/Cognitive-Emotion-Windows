@@ -49,7 +49,7 @@ namespace Microsoft.ProjectOxford.Emotion
         /// <summary>
         /// Default service endpoint URL root.
         /// </summary>
-        public const string DEFAULT_API_ROOT = "https://api.projectoxford.ai/emotion/v1.0";
+        public const string DEFAULT_API_ROOT = "https://westus.api.cognitive.microsoft.com/emotion/v1.0";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="EmotionServiceClient"/> class.

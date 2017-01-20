@@ -12,8 +12,8 @@
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <summary>This client library allows the use of Microsoft's state-of-the-art cloud-based algorithms to recognize emotions. See https://github.com/Microsoft/ProjectOxford-ClientSDK/tree/master/Emotion for more information.</summary>
-    <releaseNotes>User-configurable hostname.</releaseNotes>
-    <copyright>Copyright (c) 2016</copyright>
+    <releaseNotes>Update endpoint. Move some contract types into Common library.</releaseNotes>
+    <copyright>Copyright (c) 2017</copyright>
     <tags>Microsoft Cognitive Services Emotion Project Oxford</tags>
   </metadata>
 </package>

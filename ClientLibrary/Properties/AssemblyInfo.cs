@@ -42,7 +42,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft Corporation")]
 [assembly: AssemblyProduct("Microsoft ProjectOxford")]
-[assembly: AssemblyCopyright("Copyright (c) 2016")]
+[assembly: AssemblyCopyright("Copyright (c) 2017")]
 [assembly: AssemblyTrademark("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

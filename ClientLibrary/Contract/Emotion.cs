@@ -38,5 +38,19 @@ namespace Microsoft.ProjectOxford.Emotion.Contract
     public class Emotion : Microsoft.ProjectOxford.Common.Contract.Emotion
     {
         // this type is defined for backward-compat only
+
+        /// <summary>
+        /// Gets or sets the emotion scores.
+        /// </summary>
+        /// <value>
+        /// The emotion scores.
+        /// </value>
+        public new Scores Scores
+        {
+            get
+            {
+                return (Scores)base.Scores;
+            }
+        }
     }
 }

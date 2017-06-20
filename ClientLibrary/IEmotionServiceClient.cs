@@ -40,7 +40,7 @@ using Microsoft.ProjectOxford.Emotion.Contract;
 
 namespace Microsoft.ProjectOxford.Emotion
 {
-    internal interface IEmotionServiceClient
+    public interface IEmotionServiceClient
     {
         #region Image operations
         /// <summary>

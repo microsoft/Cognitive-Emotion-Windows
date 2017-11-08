@@ -95,9 +95,6 @@
     <Compile Include="UserControls\EmotionDetectionUserControl.xaml.cs">
       <DependentUpon>EmotionDetectionUserControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmotionDetectionUsingVideoPage.xaml.cs">
-      <DependentUpon>EmotionDetectionUsingVideoPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControls\EmotionListUserControl.xaml.cs">
       <DependentUpon>EmotionListUserControl.xaml</DependentUpon>
     </Compile>
@@ -126,10 +123,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\EmotionDetectionUserControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="EmotionDetectionUsingVideoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

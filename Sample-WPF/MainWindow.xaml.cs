@@ -76,8 +76,7 @@ namespace EmotionAPI_WPF_Samples
             _scenariosControl.SampleScenarioList = new Scenario[]
             {
                 new Scenario { Title = "Detect emotion using a stream", PageClass = typeof(DetectEmotionUsingStreamPage) },
-                new Scenario { Title = "Detect emotion using a URL", PageClass = typeof(DetectEmotionUsingURLPage)},
-                new Scenario { Title = "Detect emotion in a Video", PageClass = typeof(EmotionDetectionUsingVideoPage) }
+                new Scenario { Title = "Detect emotion using a URL", PageClass = typeof(DetectEmotionUsingURLPage)}
             };
         }
 
@@ -183,7 +182,7 @@ namespace EmotionAPI_WPF_Samples
                     resultDisplay[6] = new EmotionResultDisplay { EmotionString = "Sadness", Score = emotion.Scores.Sadness };
                     resultDisplay[7] = new EmotionResultDisplay { EmotionString = "Surprise", Score = emotion.Scores.Surprise };
 
-                    Array.Sort(resultDisplay, CompareDisplayResults);
+                    Array.Sort(resultDisplay, (result1, result2) => result2.Score.CompareTo(result1.Score));
 
                     String[] emotionStrings = new String[3];
                     for (int j = 0; j < 3; j++)
@@ -202,47 +201,6 @@ namespace EmotionAPI_WPF_Samples
                 }
                 resultListBox.ItemsSource = itemSource;
             }
-        }
-
-        public void ListVideoEmotionResult(ListBox resultListBox, VideoAggregateEvent aggregateEvent)
-        {
-            if (aggregateEvent != null)
-            {
-                EmotionResultDisplay[] resultDisplay = new EmotionResultDisplay[8];
-                List<EmotionResultDisplayItem> itemSource = new List<EmotionResultDisplayItem>();
-
-                Scores meanScores = aggregateEvent.WindowMeanScores;
-                resultDisplay[0] = new EmotionResultDisplay { EmotionString = "Anger", Score = meanScores.Anger, OriginalIndex = 0 };
-                resultDisplay[1] = new EmotionResultDisplay { EmotionString = "Contempt", Score = meanScores.Contempt, OriginalIndex = 1 };
-                resultDisplay[2] = new EmotionResultDisplay { EmotionString = "Disgust", Score = meanScores.Disgust, OriginalIndex = 2 };
-                resultDisplay[3] = new EmotionResultDisplay { EmotionString = "Fear", Score = meanScores.Fear, OriginalIndex = 3 };
-                resultDisplay[4] = new EmotionResultDisplay { EmotionString = "Happiness", Score = meanScores.Happiness, OriginalIndex = 4 };
-                resultDisplay[5] = new EmotionResultDisplay { EmotionString = "Neutral", Score = meanScores.Neutral, OriginalIndex = 5 };
-                resultDisplay[6] = new EmotionResultDisplay { EmotionString = "Sadness", Score = meanScores.Sadness, OriginalIndex = 6 };
-                resultDisplay[7] = new EmotionResultDisplay { EmotionString = "Surprise", Score = meanScores.Surprise, OriginalIndex = 7 };
-
-                Array.Sort(resultDisplay, CompareDisplayResults);
-
-                for (int j = 0; j < 3; j++)
-                {
-                    string emotion = resultDisplay[j].EmotionString + ":" + resultDisplay[j].Score.ToString("0.000000");
-
-                    itemSource.Add(new EmotionResultDisplayItem
-                    {
-                        ImageSource = new Uri("pack://application:,,,/EmotionAPI-WPF-Samples;component/Assets/Emotions.png"),
-                        UIRect = new Int32Rect(resultDisplay[j].OriginalIndex * 96, 0, 96, 96),
-                        Emotion1 = emotion
-                    });
-                }
-
-                resultListBox.ItemsSource = itemSource;
-            }
-        }
-
-        private int CompareDisplayResults(EmotionResultDisplay result1, EmotionResultDisplay result2)
-        {
-            return ((result1.Score == result2.Score) ? 0 : ((result1.Score < result2.Score) ? 1 : -1));
-        }
-         
+        }      
     }
 }

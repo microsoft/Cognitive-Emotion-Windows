@@ -73,38 +73,5 @@ namespace Microsoft.ProjectOxford.Emotion
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each face.</returns>
         Task<Contract.Emotion[]> RecognizeAsync(Stream imageStream, Rectangle[] faceRectangles);
         #endregion
-
-        #region Video operations
-        /// <summary>
-        /// Recognize emotions on faces in a video.
-        /// </summary>
-        /// <param name="videoStream">Video stream</param>
-        /// <param name="outputStyle">Output data style</param>
-        /// <returns>Video operation created</returns>
-        Task<VideoEmotionRecognitionOperation> RecognizeInVideoAsync(Stream videoStream);
-
-        /// <summary>
-        /// Recognize emotions on faces in a video.
-        /// </summary>
-        /// <param name="videoBytes">Video content as byte array</param>
-        /// <param name="outputStyle">Output data style</param>
-        /// <returns>Video operation created.</returns>
-        Task<VideoEmotionRecognitionOperation> RecognizeInVideoAsync(byte[] videoBytes);
-
-        /// <summary>
-        /// Recognize emotions on faces in a video.
-        /// </summary>
-        /// <param name="videoUrl">Video URL</param>
-        /// <param name="outputStyle">Output data style</param>
-        /// <returns>Video operation created</returns>
-        Task<VideoEmotionRecognitionOperation> RecognizeInVideoAsync(string videoUrl);
-
-        /// <summary>
-        /// Get video operation result.
-        /// </summary>
-        /// <param name="operation">The operation</param>
-        /// <returns>Operation result.</returns>
-        Task<VideoOperationResult> GetOperationResultAsync(VideoEmotionRecognitionOperation operation);
-        #endregion
     }
 }

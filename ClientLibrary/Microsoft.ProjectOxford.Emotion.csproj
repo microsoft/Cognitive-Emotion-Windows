@@ -38,9 +38,6 @@
   <ItemGroup>
     <Compile Include="Contract\Emotion.cs" />
     <Compile Include="Contract\Scores.cs" />
-    <Compile Include="Contract\VideoAggregateEvent.cs" />
-    <Compile Include="Contract\VideoEmotionRecognitionOperation.cs" />
-    <Compile Include="Contract\VideoAggregateRecognitionResult.cs" />
     <Compile Include="EmotionServiceClient.cs" />
     <Compile Include="IEmotionServiceClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

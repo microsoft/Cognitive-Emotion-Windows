@@ -51,6 +51,10 @@ namespace Microsoft.ProjectOxford.Emotion.Contract
             {
                 return (Scores)base.Scores;
             }
+            set
+            {
+                base.Scores = value;
+            }
         }
     }
 }

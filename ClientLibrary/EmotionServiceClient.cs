@@ -35,11 +35,10 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.ProjectOxford.Common;
-using Microsoft.ProjectOxford.Common.Contract;
-using Microsoft.ProjectOxford.Emotion.Contract;
 using Newtonsoft.Json;
 
 namespace Microsoft.ProjectOxford.Emotion
@@ -74,10 +73,11 @@ namespace Microsoft.ProjectOxford.Emotion
         /// Recognize emotions on faces in an image.
         /// </summary>
         /// <param name="imageUrl">URL of the image.</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each recognized face.</returns>
-        public async Task<Contract.Emotion[]> RecognizeAsync(String imageUrl)
+        public Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(String imageUrl, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await RecognizeAsync(imageUrl, null);
+            return RecognizeAsync(imageUrl, null);
         }
 
         /// <summary>
@@ -85,30 +85,34 @@ namespace Microsoft.ProjectOxford.Emotion
         /// </summary>
         /// <param name="imageUrl">URL of the image.</param>
         /// <param name="faceRectangles">Array of face rectangles.</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each recognized face.</returns>
-        public async Task<Contract.Emotion[]> RecognizeAsync(String imageUrl, Rectangle[] faceRectangles)
+        public Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(String imageUrl, Rectangle[] faceRectangles, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await PostAsync<UrlReqeust, Contract.Emotion[]>(GetRecognizeUrl(faceRectangles), new UrlReqeust { url = imageUrl });
+            return PostAsync<UrlReqeust, Microsoft.ProjectOxford.Common.Contract.Emotion[]>(GetRecognizeUrl(faceRectangles), new UrlReqeust { url = imageUrl }, cancellationToken);
         }
 
         /// <summary>
         /// Recognize emotions on faces in an image.
         /// </summary>
         /// <param name="imageStream">Stream of the image</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each recognized face.</returns>
-        public async Task<Contract.Emotion[]> RecognizeAsync(Stream imageStream)
+        public Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(Stream imageStream, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await RecognizeAsync(imageStream, null);            
+            return RecognizeAsync(imageStream, null);
         }
 
         /// <summary>
         /// Recognize emotions on faces in an image.
         /// </summary>
         /// <param name="imageStream">Stream of the image</param>
-        /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each face.</returns>        
-        public async Task<Contract.Emotion[]> RecognizeAsync(Stream imageStream, Rectangle[] faceRectangles)
+        /// <param name="faceRectangles">Array of face rectangles.</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
+        /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each face.</returns>
+        public Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(Stream imageStream, Rectangle[] faceRectangles, CancellationToken cancellationToken = default(CancellationToken))
         {
-            return await PostAsync<Stream, Contract.Emotion[]>(GetRecognizeUrl(faceRectangles), imageStream);
+            return PostAsync<Stream, Microsoft.ProjectOxford.Common.Contract.Emotion[]>(GetRecognizeUrl(faceRectangles), imageStream, cancellationToken);
         }
 
         private string GetRecognizeUrl(Rectangle[] faceRectangles)

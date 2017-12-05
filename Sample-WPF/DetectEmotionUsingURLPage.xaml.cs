@@ -42,7 +42,7 @@ using System.Windows.Media.Imaging;
 // Use the following namesapce for EmotionServiceClient
 // -----------------------------------------------------------------------
 using Microsoft.ProjectOxford.Emotion;
-using Microsoft.ProjectOxford.Emotion.Contract;
+using Microsoft.ProjectOxford.Common.Contract;
 // -----------------------------------------------------------------------
 // KEY SAMPLE CODE ENDS HERE
 // -----------------------------------------------------------------------

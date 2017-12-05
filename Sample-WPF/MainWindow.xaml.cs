@@ -38,7 +38,7 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using SampleUserControlLibrary;
-using Microsoft.ProjectOxford.Emotion.Contract;
+using Microsoft.ProjectOxford.Common.Contract;
 
 namespace EmotionAPI_WPF_Samples
 {

@@ -32,46 +32,49 @@
 // 
 
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 
 using Microsoft.ProjectOxford.Common;
-using Microsoft.ProjectOxford.Common.Contract;
-using Microsoft.ProjectOxford.Emotion.Contract;
 
 namespace Microsoft.ProjectOxford.Emotion
 {
-    internal interface IEmotionServiceClient
+    public interface IEmotionServiceClient
     {
         #region Image operations
         /// <summary>
         /// Recognize emotions on faces in an image.
         /// </summary>
         /// <param name="imageUrl">URL of the image.</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each recognized face.</returns>
-        Task<Contract.Emotion[]> RecognizeAsync(string imageUrl);
+        Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(string imageUrl, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Recognize emotions on faces in an image.
         /// </summary>
         /// <param name="imageUrl">URL of the image.</param>
         /// <param name="faceRectangles">Array of face rectangles.</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each face.</returns>
-        Task<Contract.Emotion[]> RecognizeAsync(string imageUrl, Rectangle[] faceRectangles);
+        Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(string imageUrl, Rectangle[] faceRectangles, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Recognize emotions on faces in an image.
         /// </summary>
         /// <param name="imageStream">Stream of the image</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each recognized face.</returns>        
-        Task<Contract.Emotion[]> RecognizeAsync(Stream imageStream);
+        Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(Stream imageStream, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Recognize emotions on faces in an image.
         /// </summary>
         /// <param name="imageStream">Stream of the image</param>
         /// <param name="faceRectangles">Array of face rectangles</param>
+        /// <param name="cancellationToken">Optional cancellation token</param>
         /// <returns>Async task, which, upon completion, will return rectangle and emotion scores for each face.</returns>
-        Task<Contract.Emotion[]> RecognizeAsync(Stream imageStream, Rectangle[] faceRectangles);
+        Task<Microsoft.ProjectOxford.Common.Contract.Emotion[]> RecognizeAsync(Stream imageStream, Rectangle[] faceRectangles, CancellationToken cancellationToken = default(CancellationToken));
         #endregion
     }
 }

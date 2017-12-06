@@ -9,7 +9,7 @@
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <PackageTags>Microsoft Cognitive Services;Project Oxford;Emotion</PackageTags>
     <TargetFramework>netstandard1.1</TargetFramework>
-    <Title>Microsoft.ProjectOxford.Common</Title>
+    <Title>Microsoft.ProjectOxford.Emotion</Title>
     <VersionPrefix>2.0.0</VersionPrefix>
   </PropertyGroup>
 
